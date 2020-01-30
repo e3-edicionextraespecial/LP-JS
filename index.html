@@ -1,0 +1,170 @@
+<html>
+
+
+
+<head>
+
+
+</head>
+
+<body>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <h1 class="jumbotron text-center">LifePointJS</h1>
+    <div class="container-fluid ">
+  <div class="row">
+    <div class="col-sm-4 bg-success card"><center>
+        <h1>Jugador 1</h1>
+        <div>
+           <h5  id="puntosDevidaA">8000</h5>
+      </div>
+    <div>
+        <input id="valorA"type="number" class="form-control">
+        <br>
+    <button id="btnSumar1">+</button>
+    
+    
+    <button id="btnRestar1">-</button>
+    
+    </div>
+</center>
+    </div>
+    <div class="col-sm-4">
+    <center>
+        <img src="dado.png" class="dado" alt="">
+        <p>DADO</p>
+        <br>
+        <button id="showDado" class="dice" onclick="dado()">*</button>
+        <br><br>
+    </center>
+    </div>
+    <div class="col-sm-4 bg-success card">
+    <center>
+        <h1>Jugador 2</h1>
+        <div>
+            <h5  id="puntosDevidaB">8000</h5>
+       </div>
+    <div>
+        <input id="valorB" type="number" class="form-control">
+        <br>
+    <button id="btnSumar2">+</button>
+    
+    
+    <button id="btnRestar2">-</button>
+    
+    </div>
+</center>
+    </div>
+</div>
+
+
+
+
+
+    
+</div>
+
+
+
+
+
+
+<script>
+  
+    document.getElementById("btnSumar1").addEventListener("click", sumarLP1);
+    document.getElementById("btnRestar1").addEventListener("click", restarLP1);
+    document.getElementById("btnSumar2").addEventListener("click", sumarLP2);
+    document.getElementById("btnRestar2").addEventListener("click", restarLP2);
+    var total1 = 8000;
+    var total2 =8000;
+
+    function sumarLP2(arg) {
+        
+        this.total2=arg;
+     
+         var porId=document.getElementById("valorB").value;
+         var sumar=+porId
+         total2= total2+sumar
+         document.getElementById("puntosDevidaB").innerHTML = total2;
+         }
+
+
+         function restarLP2(arg) {
+
+this.total2=arg;
+
+var porId=document.getElementById("valorB").value;
+var sumar=+porId
+total2= total2-sumar
+document.getElementById("puntosDevidaB").innerHTML = total2;
+if (total2 <= 0){
+    alert("EL juego ha terminado");
+    }
+
+
+}
+
+
+
+    
+    function sumarLP1(arg) {
+        
+   this.total1=arg;
+
+    var porId=document.getElementById("valorA").value;
+    var sumar=+porId
+    total1= total1+sumar
+    document.getElementById("puntosDevidaA").innerHTML = total1;
+    }
+function restarLP1(arg) {
+
+    this.tota1l=arg;
+  
+    var porId=document.getElementById("valorA").value;
+    var sumar=+porId
+    total1= total1-sumar
+    document.getElementById("puntosDevidaA").innerHTML = total1;
+    if (total1 <= 0){
+    	alert("EL juego ha terminado");
+    	}
+    
+   
+  }
+  function dado() {
+
+    var d1 = Math.floor(Math.random() * 6) + 1;
+    
+    var showDado = document.getElementById("showDado");
+    showDado.innerHTML = d1
+    alert("Su Numero es " + d1)
+    
+}
+
+   
+
+  
+
+    </script>
+    <style type="text/css">
+     img.dado{
+        width:50PX;
+    height:50px;
+
+    }
+
+    button.dice{
+
+	width:80PX;
+    height:80px;
+	background:#F5F5F5;
+	border:#999 1px solid;
+	padding:10px;
+	font-size:40px;
+	text-align:center;
+	margin:0px;
+}
+        </style>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+</html>
